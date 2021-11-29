@@ -1,0 +1,9 @@
+[Unit]
+Description=Automatically switch Sway configs based on outputs
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+
+[Install]
+WantedBy=default.target
