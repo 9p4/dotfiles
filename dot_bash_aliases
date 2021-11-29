@@ -1,0 +1,16 @@
+# All aliases for bash / zsh
+alias ls="exa --color=auto -a -g"
+alias cp="cp -v"
+alias sl="ls"
+alias clear="clear -x"
+alias ip="ip -c"
+alias vi="lvim"
+alias vim="lvim"
+alias nvim="lvim"
+alias cat="bat"
+alias rm="trash-put"
+alias vi="nvim"
+alias netcat="ncat"
+alias nc="ncat"
+alias diff="delta"
+#eval $(thefuck --alias)

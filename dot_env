@@ -1,0 +1,2 @@
+WINEPREFIX=$HOME/.wine/default
+source ~/.config/environment.d/envvars.conf
