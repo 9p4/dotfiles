@@ -1,0 +1,109 @@
+#!/bin/bash
+#
+#  i3-brightness
+#
+#  Brightness control and brightness notifications for i3wm.
+#
+
+# Get the brightness as a percentage.
+get_brightness() {
+    #xbacklight
+    light
+}
+
+# Increase brightness relative to current brightness.
+#
+# Arguments:
+#   Step        (integer) Percentage to increase by.
+raise_brightness() {
+    #xbacklight -inc $1
+    light -A $1
+}
+
+# Decrease brightness relative to current brightness.
+#
+# Arguments:
+#   Step        (integer) Percentage to decrease by.
+lower_brightness() {
+    #xbacklight -dec $1
+    light -U $1
+}
+
+# Set brightness.
+#
+# Arguments:
+#   Step        (integer) Percentage to decrease by.
+set_brightness() {
+    #xbacklight -set $1
+    light -S $1
+}
+
+# Gets an icon for the provided brightness.
+#
+# Arguments:
+#   Brightness      (integer) An integer indicating the brightness.
+#
+# Returns:
+#   The brightness icon name.
+get_icon() {
+    
+    local bri=$1
+    local icon
+    
+    if [ "$bri" -ge 100 ]; then icon="notification-display-brightness-full"
+    elif [ "$bri" -ge 66 ]; then icon="notification-display-brightness-high"
+    elif [ "$bri" -ge 33 ]; then icon="notification-display-brightness-medium"
+    elif [ "$bri" -gt 0 ]; then icon="notification-display-brightness-low"
+    else icon="notification-display-brightness-off"
+    fi
+
+    echo "${icon}"
+}
+
+# Use notify-send to show the brightness
+notify_brightness() {
+    if [ "$1" == "" ]
+    then
+        local brightness=$(get_brightness)
+        echo $brightness
+    else
+        local brightness=$(expr $(echo $(get_brightness) | awk -F'.' '{print $1}') + $1)
+        echo $brightness
+    fi
+    local icon=$(get_icon $brightness)
+    local text="Brightness ${brightness}%"
+
+    #notify-send -i "$icon" -t 1 -h int:value:"$brightness" -h string:synchronous:brightness "$text"
+}
+
+usage() {
+    echo "Usage: $0 [options]
+Control brightness and related notifications
+
+Options:
+  -i <amount>		Increase brightness
+  -d <amount>		Decrease brightness
+  -v <value>		Set brightness
+  -h			    Display this help and exit
+" 1>&2
+    exit 1
+}
+
+while getopts ":idv:h" o; do
+    case "$o" in
+        i)
+            notify_brightness "$2" &
+            raise_brightness "$2"
+        ;;
+        d)
+            notify_brightness "-$2" &
+            lower_brightness "$2"
+        ;;
+        v)
+            set_brightness "$2"
+        ;;
+        h | *)
+            usage
+        ;;
+    esac
+done

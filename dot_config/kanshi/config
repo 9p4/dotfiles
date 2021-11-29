@@ -1,0 +1,8 @@
+profile {
+	output eDP-1 enable position 0,0 scale 2
+	output "Hewlett Packard HP 23xw 6CM7072CGL" position 1920,0
+}
+
+profile {
+  	output eDP-1 enable position 0,0 scale 2
+}

@@ -1,0 +1,16 @@
+#!/bin/sh
+sleep 1
+# Autostart
+dex -ae sway -s ~/.config/autostart &
+/usr/bin/env QT_QPA_PLATFORM=wayland copyq &
+# mictray &
+# birdtray &
+gammastep -l 40.440624:-79.995888 &
+swayidle -w \
+timeout 300 'swaylock -f -c 000000' \
+timeout 301 'swaymsg "output * dpms off"' \
+resume 'swaymsg "output * dpms on"' \
+before-sleep 'swaylock -f -c 000000' \
+lock 'swaylock -f -c 000000'
+
+#swayidle lock 'swaylock -c 000000'
