@@ -306,3 +306,5 @@ bindsym Control+Mod1+h exec --no-startup-id copyq menu
 exec $path/swaystartup
 
 include /etc/sway/config.d/*
+
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"

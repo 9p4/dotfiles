@@ -1,9 +1,10 @@
 [Unit]
 Description=Automatically switch Sway configs based on outputs
+BindsTo=sway-session.target
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/kanshi
 
 [Install]
-WantedBy=default.target
+WantedBy=sway-session.target
