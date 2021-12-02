@@ -40,7 +40,7 @@
     },
     "battery": {
         "format": "{capacity}% {time}h",
-        "format-time": "{H}:{M}"
+        "format-time": "{H:02}:{M:02}"
     },
     "clock": {
         "interval": 1,
