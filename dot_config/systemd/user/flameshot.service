@@ -1,9 +1,0 @@
-[Unit]
-Description=Flameshot
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/flameshot
-
-[Install]
-WantedBy=default.target
