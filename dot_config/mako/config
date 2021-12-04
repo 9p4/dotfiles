@@ -23,9 +23,19 @@ border-color=#d08770
 border-color=#bf616a
 default-timeout=0
 
+[urgency=critical]
+default-timeout=0
+border-color=#ff0000
+background-color=#ff0000
+text-color=#ffffff
+invisible=0
+
 [category=mpd]
 default-timeout=2000
 group-by=category
 
 [mode=do-not-disturb]
 invisible=1
+
+[urgency=critical mode=do-not-disturb]
+invisible=0
