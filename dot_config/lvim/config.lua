@@ -202,7 +202,6 @@ require('neorg').setup {
 
       end)
     end,
-    requires = "nvim-lua/plenary.nvim"
 }
 
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()

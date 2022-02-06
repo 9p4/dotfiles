@@ -3,7 +3,7 @@ Description=Ibus daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ibus-daemon -rx
+ExecStart=/usr/bin/ibus-daemon -drxR
 
 [Install]
 WantedBy=default.target

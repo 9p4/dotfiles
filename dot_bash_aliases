@@ -14,3 +14,4 @@ alias netcat="ncat"
 alias nc="ncat"
 alias diff="delta"
 #eval $(thefuck --alias)
+alias wc="woodpecker-cli"

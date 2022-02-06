@@ -6,3 +6,8 @@ profile {
 profile {
   	output eDP-1 enable position 0,0 scale 2
 }
+
+profile {
+	output eDP-1 enable position 0,0 scale 2
+	output DP-3 position 1920,0 scale 2
+}

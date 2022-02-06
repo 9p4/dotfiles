@@ -114,7 +114,7 @@
     },
     "network#ethernet" : {
       "interface": "enp58s0u1u2",
-      "format": "{ifname}: {ipaddr}",
+      "format": "{ifname}: {ipaddr} {bandwidthUpBits} up, {bandwidthDownBits} down",
       "format-wifi": "{essid} ({signalStrength}%)",
       "format-ethernet": "{ifname}: {ipaddr}",
       "format-disconnected": "{ifname}: disconnected",

@@ -307,4 +307,4 @@ exec $path/swaystartup
 
 include /etc/sway/config.d/*
 
-exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
