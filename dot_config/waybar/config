@@ -1,89 +1,120 @@
-[{
+[
+  {
     "layer": "top",
     "position": "bottom",
     "height": 24,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/uptime", "backlight", "pulseaudio", "battery", "clock", "tray"],
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+      "sway/window"
+    ],
+    "modules-right": [
+      "custom/uptime",
+      "backlight",
+      "pulseaudio",
+      "battery",
+      "clock",
+      "tray"
+    ],
     "sway/workspaces": {
-        "all-outputs": false,
-        "format": "{index}",
-        "disable-scroll": false,
-        "disable-click": false,
-        "enable-bar-scroll": false,
-        "numeric-first": true
+      "all-outputs": false,
+      "format": "{index}",
+      "disable-scroll": false,
+      "disable-click": false,
+      "enable-bar-scroll": false,
+      "numeric-first": true
     },
     "sway/mode": {
-        "format": "{}",
-        "tooltip": false
+      "format": "{}",
+      "tooltip": false
     },
     "sway/window": {
-        "format": "{}",
-        "max-length": 64
+      "format": "{}",
+      "max-length": 64
     },
     "custom/uptime": {
-        "format": "{}",
-        "return-type": "",
-        "interval": 10,
-        "exec": "uptime | sed 's/^.* up \\+\\(.\\+\\), \\+[0-9] user.*$/\\1/' | sed 's/  / /g'"
+      "format": "{}",
+      "return-type": "",
+      "interval": 10,
+      "exec": "uptime | sed 's/^.* up \\+\\(.\\+\\), \\+[0-9] user.*$/\\1/' | sed 's/  / /g'"
     },
     "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}%",
-        "on-scroll-up": "brightness -i 5",
-        "on-scroll-down": "brightness -d 5"
+      "device": "intel_backlight",
+      "format": "{percent}%",
+      "on-scroll-up": "brightness -i 5",
+      "on-scroll-down": "brightness -d 5"
     },
     "pulseaudio": {
-        "format": "{volume}%",
-        "format-bluetooth": "{volume}% ",
-        "format-muted": "muted",
-        "scroll-step": 5
+      "format": "{volume}%",
+      "format-bluetooth": "{volume}% ",
+      "format-muted": "muted",
+      "scroll-step": 5
     },
     "battery": {
-        "format": "{capacity}% {time}h",
-        "format-time": "{H:02}:{M:02}"
+      "format": "{capacity}% {time}h",
+      "format-time": "{H:02}:{M:02}"
     },
     "clock": {
-        "interval": 1,
-        "format": "{:%F %H:%M:%S}"
+      "interval": 1,
+      "format": "{:%F %H:%M:%S}"
     },
     "tray": {
-        "icon-size": 30,
-        "spacing": 8
+      "icon-size": 30,
+      "spacing": 8
     }
-},
-{
+  },
+  {
     "layer": "top",
     "position": "top",
     "height": 24,
-    "modules-left": ["custom/dnd", "idle_inhibitor", "custom/load", "cpu", "memory"],
-    "modules-right": ["temperature", "disk#root", "disk#home", "disk#data", "network#wifi", "network#ethernet"],
+    "modules-left": [
+      "custom/notifs",
+      "idle_inhibitor",
+      "custom/load",
+      "cpu",
+      "memory",
+      "custom/arp"
+    ],
+    "modules-right": [
+      "temperature",
+      "disk#root",
+      "disk#home",
+      "disk#data",
+      "network#wifi",
+      "network#ethernet"
+    ],
     "sway/workspaces": {
-        "all-outputs": false,
-        "format": "{index}",
-        "disable-scroll": false,
-        "disable-click": false,
-        "enable-bar-scroll": false,
-        "numeric-first": true
+      "all-outputs": false,
+      "format": "{index}",
+      "disable-scroll": false,
+      "disable-click": false,
+      "enable-bar-scroll": false,
+      "numeric-first": true
     },
     "custom/load": {
-        "format": "{}",
-        "exec": "$HOME/.config/waybar/loadaverage.sh 2> /dev/null",
-        "interval": 5
+      "format": "{}",
+      "exec": "$HOME/.config/waybar/loadaverage.sh 2> /dev/null",
+      "interval": 5
+    },
+    "custom/arp": {
+      "format": "{}",
+      "exec": "$HOME/.local/bin/arpcheck",
+      "interval": 5
     },
     "cpu": {
-          "interval": 1,
-        "format": "CPU {usage}%",
-        "max-length": 10
+      "interval": 1,
+      "format": "CPU {usage}%",
+      "max-length": 10
     },
     "memory": {
-        "interval": 30,
-        "format": "RAM: {used:0.1f}G/{total:0.1f}G"
+      "interval": 30,
+      "format": "RAM: {used:0.1f}G/{total:0.1f}G"
     },
     "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-    	"critical-threshold": 90,
-    	"format-critical": "HOT {temperatureC}°C",
-    	"format": "{temperatureC}°C"
+      "critical-threshold": 90,
+      "format-critical": "HOT {temperatureC}°C",
+      "format": "{temperatureC}°C"
     },
     "disk#root": {
       "interval": 30,
@@ -100,7 +131,7 @@
       "format": "{path}: {percentage_used}%",
       "path": "/data"
     },
-    "network#wifi" : {
+    "network#wifi": {
       "interface": "wlan0",
       "format": "{ifname}: {ipaddr}",
       "format-wifi": "{essid} ({signalStrength}%)",
@@ -112,7 +143,7 @@
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },
-    "network#ethernet" : {
+    "network#ethernet": {
       "interface": "enp58s0u1u2",
       "format": "{ifname}: {ipaddr} {bandwidthUpBits} up, {bandwidthDownBits} down",
       "format-wifi": "{essid} ({signalStrength}%)",
@@ -125,22 +156,27 @@
       "max-length": 50
     },
     "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "custom/dnd" : {
-        "format": "{icon}",
-        "format-icons": {
-            "default": "",
-            "do-not-disturb": ""
-        },
-        "tooltip": false,
-        "interval": 10,
-        "return-type": "json",
-        "exec": "echo \\{\\\"alt\\\": \\\"$(makoctl get-mode)\\\"\\}",
-        "on-click": "makoctl toggle-mode do-not-disturb"
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
       }
-}]
+    },
+    "custom/notifs": {
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'></span>",
+        "none": "",
+        "dnd-none": "",
+        "dnd-notification": "<span foreground='red'></span>"
+      },
+      "tooltip": false,
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    }
+  }
+]

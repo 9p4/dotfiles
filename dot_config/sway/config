@@ -48,14 +48,17 @@ bindsym $mod+Return exec footclient
 bindsym $mod+Shift+q kill
 
 # Don't quit firefox when pressing Control+Q
-bindsym Control+q exec $path/noctrlq.sh
+#bindsym Control+q exec $path/noctrlq.sh
 
 # start rofi (a program launcher)
-bindsym $mod+t exec --no-startup-id rofi -show run
-bindsym $mod+d exec --no-startup-id rofi -i -I -show drun
+#bindsym $mod+t exec --no-startup-id rofi -show run
+#bindsym $mod+d exec --no-startup-id rofi -i -I -show drun
 #bindsym $mod+Tab exec --no-startup-id rofi -show window
 #bindsym $mod+t exec --no-startup-id wofi --show=run --lines=15 --prompt="Run Command"
 #bindsym $mod+d exec --no-startup-id wofi -i -I --show=drun --lines=15 --prompt="Launch Application"
+
+# fuzzel (program launcher)
+bindsym $mod+d exec --no-startup-id /usr/bin/fuzzel -i Papirus-Dark -T foot -w 80 -b 2e3440e0 -C 88c0d0e0 -s 00bcd4e0 -t 888888e0 -S eeeeeee0 -m ffffffe0
 
 # change focus
 bindsym $mod+j focus left
@@ -209,6 +212,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Notifications
+bindsym $mod+Shift+g exec /usr/bin/swaync-client -t
+bindsym $mod+g exec /usr/bin/bash -c "/usr/bin/swaync-client -C; /usr/bin/swaync-client -d"
+
 # Start waybar
 bar {
   swaybar_command waybar
@@ -272,14 +279,10 @@ bindsym Print exec bash -c 'grim -g "$(slurp)" `echo $HOME/Downloads/$(date +%F-
 #bindsym Shift+Print exec bash -c "/usr/bin/flameshot full -c"
 #bindsym $mod+Print exec bash -c "/usr/bin/flameshot gui"
 
-# XKill
-#bindsym --release $mod+o exec xkill
-bindsym --release $mod+p exec bash -c "ps -ax | grep firefox | cut -f2 -d' ' | xargs kill"
-
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 
-default_border none
+default_border pixel 1
 
 # Gaps
 gaps inner 10

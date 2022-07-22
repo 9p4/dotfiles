@@ -116,6 +116,10 @@ function fucking() {
   eval $(thefuck --alias)
 }
 
+function conda() {
+  [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh && conda $@
+}
+
 umask 027
 
 #eval $(source /usr/bin/lesspipe.sh)

@@ -79,7 +79,8 @@ window#waybar.chromium {
 #custom-uptime,
 #custom-load,
 #disk,
-#custom-dnd,
+#custom-notifs,
+#custom-arp,
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
@@ -269,7 +270,12 @@ label:focus {
     color: #333;
 }
 
-#custom-dnd {
+#custom-notifs {
   font-size: 20px;
   background-color: #333;
+}
+
+#custom-arp {
+  background-color: #333;
+  color: #eee;
 }

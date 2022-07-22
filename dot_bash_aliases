@@ -14,4 +14,9 @@ alias netcat="ncat"
 alias nc="ncat"
 alias diff="delta"
 #eval $(thefuck --alias)
-alias wc="woodpecker-cli"
+alias wp="woodpecker-cli"
+alias feh="feh --scale-down"
+
+pyclean () {
+    find . -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
+}
