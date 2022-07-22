@@ -171,3 +171,6 @@ lvim.plugins = {
 -- })
 
 lvim.builtin.lualine.sections.lualine_z = { "progress", "location" }
+
+vim.opt.clipboard=""
+vim.opt.inccommand="split"
