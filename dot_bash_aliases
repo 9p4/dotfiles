@@ -16,6 +16,7 @@ alias diff="delta"
 #eval $(thefuck --alias)
 alias wp="woodpecker-cli"
 alias feh="feh --scale-down"
+alias mv="mv -n"
 
 pyclean () {
     find . -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
