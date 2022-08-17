@@ -144,7 +144,7 @@
       "max-length": 50
     },
     "network#ethernet": {
-      "interface": "enp58s0u1u2",
+      "interface": "enp58s0u1u4",
       "format": "{ifname}: {ipaddr} {bandwidthUpBits} up, {bandwidthDownBits} down",
       "format-wifi": "{essid} ({signalStrength}%)",
       "format-ethernet": "{ifname}: {ipaddr}",
