@@ -52,6 +52,9 @@ return require("packer").startup(function(use)
 	-- Rust
 	use("https://github.com/simrat39/rust-tools.nvim")
 
+	-- Python
+	use("https://github.com/mfussenegger/nvim-dap-python")
+
 	-- Autocomplete
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -124,6 +127,6 @@ return require("packer").startup(function(use)
 	})
 
 	-- Misc
-	use "https://github.com/lewis6991/impatient.nvim"
-	use "https://github.com/kyazdani42/nvim-tree.lua"
+	use("https://github.com/lewis6991/impatient.nvim")
+	use("https://github.com/kyazdani42/nvim-tree.lua")
 end)
