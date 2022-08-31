@@ -40,3 +40,4 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.notify = require("notify")
 vim.opt.inccommand = "split"
+vim.cmd("colorscheme material")

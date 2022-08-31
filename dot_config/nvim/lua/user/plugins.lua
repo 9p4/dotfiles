@@ -129,4 +129,5 @@ return require("packer").startup(function(use)
 	-- Misc
 	use("https://github.com/lewis6991/impatient.nvim")
 	use("https://github.com/kyazdani42/nvim-tree.lua")
+	use("https://github.com/ahmedkhalf/project.nvim")
 end)

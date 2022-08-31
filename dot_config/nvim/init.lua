@@ -18,7 +18,4 @@ require("user.toggleterm")
 require("user.treesitter")
 require("user.whichkey")
 require("user.telescope")
-require("user.bufferline") -- Has to be after stuff
-
--- Theme
-vim.cmd("colorscheme material")
+require("user.bufferline") -- Has to be at the end
