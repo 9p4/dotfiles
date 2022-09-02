@@ -56,19 +56,19 @@ return require("packer").startup(function(use)
 	use("https://github.com/mfussenegger/nvim-dap-python")
 
 	-- Autocomplete
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-nvim-lua")
+	use("https://github.com/hrsh7th/nvim-cmp") -- The completion plugin
+	use("https://github.com/hrsh7th/cmp-buffer") -- buffer completions
+	use("https://github.com/hrsh7th/cmp-path") -- path completions
+	use("https://github.com/saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("https://github.com/hrsh7th/cmp-nvim-lsp")
+	use("https://github.com/LunarVim/peek.lua")
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	use("https://github.com/L3MON4D3/LuaSnip") --snippet engine
+	use("https://github.com/rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
+	use("https://github.com/nvim-telescope/telescope.nvim")
 
 	-- Treesitter
 	use({

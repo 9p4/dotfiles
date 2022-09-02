@@ -1,7 +1,12 @@
+local jdtls = require("jdtls")
+
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
 local workspace_dir = "/home/ersei/workspaces/jdtls/" .. project_name
+
+local extendedClientCapabilities = jdtls.extendedClientCapabilities
+extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -52,6 +57,22 @@ local config = {
 					},
 				},
 			},
+			implementationsCodeLens = {
+				enabled = true,
+			},
+			referencesCodeLens = {
+				enabled = true,
+			},
+			eclipse = {
+				downloadSources = true,
+			},
+			maven = {
+				downloadSources = true,
+			},
+			references = {
+				includeDecompiledSources = true,
+			},
+			signatureHelp = { enabled = true },
 		},
 	},
 
@@ -62,14 +83,15 @@ local config = {
 			),
 			vim.fn.glob("/home/ersei/git/github.com/microsoft/vscode-java-test/server/*.jar"),
 		},
+		extendedClientCapabilities = extendedClientCapabilities,
 	},
 
 	on_attach = function(client, bufnr)
 		require("jdtls.setup").add_commands()
-		require("jdtls").setup_dap({ hotcodereplace = "auto" })
+		jdtls.setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
 	end,
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
+jdtls.start_or_attach(config)
