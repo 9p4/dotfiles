@@ -73,6 +73,12 @@ local config = {
 				includeDecompiledSources = true,
 			},
 			signatureHelp = { enabled = true },
+			format = {
+				settings = {
+					url = "/home/ersei/.config/nvim/resource/java-eclipse.xml",
+					profile = "MyFormat",
+				},
+			},
 		},
 	},
 
