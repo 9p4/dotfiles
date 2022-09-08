@@ -87,7 +87,6 @@ local config = {
 			vim.fn.glob(
 				"/home/ersei/git/github.com/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
 			),
-			vim.fn.glob("/home/ersei/git/github.com/microsoft/vscode-java-test/server/*.jar"),
 		},
 		extendedClientCapabilities = extendedClientCapabilities,
 	},
@@ -98,6 +97,9 @@ local config = {
 		require("jdtls.dap").setup_dap_main_class_configs()
 	end,
 }
+
+vim.list_extend(config.init_options.bundles, vim.split(vim.fn.glob("/home/ersei/git/github.com/microsoft/vscode-java-test/server/*.jar"), "\n"))
+
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
 jdtls.start_or_attach(config)
