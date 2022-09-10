@@ -126,6 +126,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Neorg
+	use({ "https://github.com/nvim-neorg/neorg", tag = "0.0.12" })
+
 	-- Misc
 	use("https://github.com/lewis6991/impatient.nvim")
 	use("https://github.com/kyazdani42/nvim-tree.lua")
