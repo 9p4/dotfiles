@@ -23,15 +23,15 @@ input 1133:49291:Logitech_G502_HERO_Gaming_Mouse {
 output "*" bg ~/Pictures/wallpaper.png fill
 
 # Set cursors
-seat seat0 xcursor_theme Breeze-Adapta-Cursor
+seat seat0 xcursor_theme breeze_cursors
 
 # Set GTK theme
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adapta-Nokto'
+    gsettings set $gnome-schema gtk-theme 'Breeze-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Breeze-Adapta-Cursor'
+    gsettings set $gnome-schema cursor-theme 'breeze_cursors'
 }
 
 # Set some important variables
