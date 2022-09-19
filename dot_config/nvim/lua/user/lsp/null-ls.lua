@@ -19,7 +19,8 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.clang_format.with({
-			disabled_filetypes = { "java", "cs" },
+			disabled_filetypes = { "java", "cs", "c" },
+			offset_encoding = { "utf-8" },
 		}),
 		-- formatting.rustfmt,
 		--    diagnostics.flake8,

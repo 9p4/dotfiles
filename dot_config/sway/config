@@ -279,6 +279,9 @@ bindsym Print exec bash -c 'grim -g "$(slurp)" `echo $HOME/Downloads/$(date +%F-
 #bindsym Shift+Print exec bash -c "/usr/bin/flameshot full -c"
 #bindsym $mod+Print exec bash -c "/usr/bin/flameshot gui"
 
+# Gestures
+#bindgesture swipe:3:left seat seat0 cursor press button9, seat seat0 cursor release button9
+
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 
@@ -300,7 +303,7 @@ client.placeholder      #000000 #0c0c0c    #ffffff
 client.background       #ffffff
 
 # Floating windows
-for_window [title="CopyQ"] floating enable # CopyQ
+for_window [app_id="com.github.hluk.copyq"] floating enable # CopyQ
 for_window [title="Firefox — Sharing Indicator"] floating enable
 
 # CopyQ

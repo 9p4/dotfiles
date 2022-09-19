@@ -1,0 +1,11 @@
+#!/bin/bash
+echo hi > /tmp/yesitworks
+export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+currentWorkspace=$(swaymsg -r -t get_workspaces | jq -r '.. | select(.type?) | select(.focused==true) | .num')
+if [[ $1 == "right" ]]; then
+	/usr/bin/swaymsg workspace number $((currentWorkspace + 1))
+fi
+
+if [[ $1 == "left" ]]; then
+	/usr/bin/swaymsg workspace number $((currentWorkspace - 1))
+fi
