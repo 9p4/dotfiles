@@ -16,7 +16,7 @@ alias diff="delta"
 #eval $(thefuck --alias)
 alias wp="woodpecker-cli"
 alias feh="feh --scale-down"
-alias mv="mv -n"
+# alias mv="mv -n"
 
 alias nvidia-on="sudo nvidia-on"
 alias nvidia-off="sudo nvidia-off"
@@ -24,3 +24,5 @@ alias nvidia-off="sudo nvidia-off"
 pyclean () {
     find . -regex '^.*\(__pycache__\|\.py[co]\)$' -delete
 }
+
+alias feh="echo imv"

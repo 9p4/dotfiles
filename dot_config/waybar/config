@@ -3,11 +3,7 @@
     "layer": "top",
     "position": "bottom",
     "height": 24,
-    "modules-left": [
-      "sway/workspaces",
-      "sway/mode",
-      "sway/window"
-    ],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": [
       "custom/uptime",
       "backlight",
@@ -176,6 +172,7 @@
       "exec": "swaync-client -swb",
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
+      "on-click-middle": "swaync-client -C",
       "escape": true
     }
   }
