@@ -41,3 +41,4 @@ vim.opt.iskeyword:append("-")
 vim.notify = require("notify")
 vim.opt.inccommand = "split"
 vim.cmd("colorscheme material")
+vim.opt.linebreak = true
