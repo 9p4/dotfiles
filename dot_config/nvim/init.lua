@@ -18,4 +18,5 @@ require("user.toggleterm")
 require("user.treesitter")
 require("user.whichkey")
 require("user.telescope")
+require("user.leap")
 require("user.bufferline") -- Has to be at the end
