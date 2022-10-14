@@ -3,7 +3,7 @@ local jdtls = require("jdtls")
 -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
-local workspace_dir = "/home/ersei/.cache/jdtls/" .. project_name
+local workspace_dir = "/home/ersei/.cache/jdtls/" .. vim.fn.getcwd()
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
