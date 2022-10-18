@@ -42,6 +42,12 @@ local config = {
 	-- for a list of options
 	settings = {
 		java = {
+			project = {
+				referencedLibraries = {
+					"/usr/share/java/hamcrest/core.jar",
+					"/usr/share/java/junit.jar"
+				},
+			},
 			configuration = {
 				-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 				-- And search for `interface RuntimeOption`
@@ -83,11 +89,6 @@ local config = {
 	},
 
 	init_options = {
-		bundles = {
-			vim.fn.glob(
-				"/home/ersei/git/github.com/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-			),
-		},
 		extendedClientCapabilities = extendedClientCapabilities,
 	},
 
@@ -98,7 +99,17 @@ local config = {
 	end,
 }
 
-vim.list_extend(config.init_options.bundles, vim.split(vim.fn.glob("/home/ersei/git/github.com/microsoft/vscode-java-test/server/*.jar"), "\n"))
+local bundles = {
+	vim.fn.glob(
+		"/home/ersei/git/github.com/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+	),
+};
+
+vim.list_extend(bundles, vim.split(vim.fn.glob("/home/ersei/git/github.com/microsoft/vscode-java-test/server/*.jar"), "\n"))
+
+config['init_options'] = {
+  bundles = bundles;
+}
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
