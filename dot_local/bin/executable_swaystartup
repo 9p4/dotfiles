@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 sleep 1
 # Autostart
 dex -ae sway -s ~/.config/autostart &

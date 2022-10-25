@@ -58,8 +58,8 @@ local config = {
 						path = "/usr/lib/jvm/java-11-openjdk/",
 					},
 					{
-						name = "JavaSE-18",
-						path = "/usr/lib/jvm/java-18-openjdk/",
+						name = "JavaSE-19",
+						path = "/usr/lib/jvm/java-19-openjdk/",
 					},
 				},
 			},

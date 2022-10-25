@@ -29,9 +29,10 @@ seat seat0 xcursor_theme breeze_cursors
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Breeze-Dark'
+    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'breeze_cursors'
+	gsettings set $gnome-schema color-scheme 'prefer-dark'
 }
 
 # Set some important variables
@@ -58,7 +59,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id wofi -i -I --show=drun --lines=15 --prompt="Launch Application"
 
 # fuzzel (program launcher)
-bindsym $mod+d exec --no-startup-id /usr/bin/fuzzel -i Papirus-Dark -T foot -w 80 -b 2e3440e0 -C 88c0d0e0 -s 00bcd4e0 -t 888888e0 -S eeeeeee0 -m ffffffe0
+bindsym $mod+d exec --no-startup-id /usr/bin/fuzzel --icon-theme=Papirus-Dark --terminal=foot --width=80 --background-color=2e3440e0 --border-color=88c0d0e0 --selection-color=00bcd4e0 --text-color=888888e0 --selection-text-color=eeeeeee0 --match-color=ffffffe0 --selection-match-color=ffffffe0
 
 # change focus
 bindsym $mod+j focus left
