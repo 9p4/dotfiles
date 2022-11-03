@@ -1,2 +1,2 @@
-WINEPREFIX=$HOME/.wine/default
-eval $(sed 's/^/export /' .config/environment.d/envvars.conf)
+export WINEPREFIX=$HOME/.wine/default
+eval $(sed 's/^/export /' /home/ersei/.config/environment.d/envvars.conf)

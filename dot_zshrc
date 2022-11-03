@@ -67,7 +67,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mosh sudo)
+plugins=(git mosh sudo evalcache)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh_aliases
 
-source ~/.env
+_evalcache cat ~/.env
 
 RPROMPT='$(date +%H:%M:%S)'
 

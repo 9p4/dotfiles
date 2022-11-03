@@ -22,37 +22,44 @@
     },
     "sway/mode": {
       "format": "{}",
-      "tooltip": false
+      "tooltip": false,
+      "on-click": ""
     },
     "sway/window": {
       "format": "{}",
-      "max-length": 64
+      "max-length": 64,
+      "on-click": ""
     },
     "custom/uptime": {
       "format": "{}",
       "return-type": "",
       "interval": 10,
-      "exec": "uptime | sed 's/^.* up \\+\\(.\\+\\), \\+[0-9] user.*$/\\1/' | sed 's/  / /g'"
+      "exec": "uptime | sed 's/^.* up \\+\\(.\\+\\), \\+[0-9] user.*$/\\1/' | sed 's/  / /g'",
+      "on-click": ""
     },
     "backlight": {
       "device": "intel_backlight",
       "format": "{percent}%",
       "on-scroll-up": "brightness -i 5",
-      "on-scroll-down": "brightness -d 5"
+      "on-scroll-down": "brightness -d 5",
+      "on-click": ""
     },
     "pulseaudio": {
       "format": "{volume}%",
       "format-bluetooth": "{volume}% ",
       "format-muted": "muted",
-      "scroll-step": 5
+      "scroll-step": 5,
+      "on-click": ""
     },
     "battery": {
       "format": "{capacity}% {time}h",
-      "format-time": "{H:02}:{M:02}"
+      "format-time": "{H:02}:{M:02}",
+      "on-click": ""
     },
     "clock": {
       "interval": 1,
-      "format": "{:%F %H:%M:%S}"
+      "format": "{:%F %H:%M:%S}",
+      "on-click": ""
     },
     "tray": {
       "icon-size": 30,
@@ -68,8 +75,7 @@
       "idle_inhibitor",
       "custom/load",
       "cpu",
-      "memory",
-      "custom/arp"
+      "memory"
     ],
     "modules-right": [
       "temperature",
@@ -90,42 +96,44 @@
     "custom/load": {
       "format": "{}",
       "exec": "$HOME/.config/waybar/loadaverage.sh 2> /dev/null",
-      "interval": 5
-    },
-    "custom/arp": {
-      "format": "{}",
-      "exec": "$HOME/.local/bin/arpcheck",
-      "interval": 5
+      "interval": 5,
+      "on-click": ""
     },
     "cpu": {
       "interval": 1,
       "format": "CPU {usage}%",
-      "max-length": 10
+      "max-length": 10,
+      "on-click": ""
     },
     "memory": {
       "interval": 30,
-      "format": "RAM: {used:0.1f}G/{total:0.1f}G"
+      "format": "RAM: {used:0.1f}G/{total:0.1f}G",
+      "on-click": ""
     },
     "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
       "critical-threshold": 90,
       "format-critical": "HOT {temperatureC}°C",
-      "format": "{temperatureC}°C"
+      "format": "{temperatureC}°C",
+      "on-click": ""
     },
     "disk#root": {
       "interval": 30,
       "format": "{path}: {percentage_used}%",
-      "path": "/"
+      "path": "/",
+      "on-click": ""
     },
     "disk#home": {
       "interval": 30,
       "format": "{path}: {percentage_used}%",
-      "path": "/home"
+      "path": "/home",
+      "on-click": ""
     },
     "disk#data": {
       "interval": 30,
       "format": "{path}: {percentage_used}%",
-      "path": "/data"
+      "path": "/data",
+      "on-click": ""
     },
     "network#wifi": {
       "interface": "wlan0",
@@ -137,7 +145,8 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%)",
       "tooltip-format-ethernet": "{ifname}",
       "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
+      "max-length": 50,
+      "on-click": ""
     },
     "network#ethernet": {
       "interface": "enp58s0u1u4",
@@ -149,14 +158,16 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%)",
       "tooltip-format-ethernet": "{ifname}",
       "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
+      "max-length": 50,
+      "on-click": ""
     },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
         "activated": "",
         "deactivated": ""
-      }
+      },
+      "on-click": ""
     },
     "custom/notifs": {
       "format": "{icon}",

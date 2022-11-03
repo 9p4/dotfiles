@@ -3,7 +3,7 @@
   border-radius: 0;
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  /*font-size: 13px;*/
 }
 
 window#waybar {
@@ -16,24 +16,6 @@ window#waybar {
 
 window#waybar.hidden {
   opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-  background-color: #3f3f3f;
-}
-
-window#waybar.chromium {
-  background-color: #000000;
-  border: none;
 }
 
 #workspaces button {
@@ -85,12 +67,9 @@ window#waybar.chromium {
 #mpd {
   padding: 0 10px;
   margin: 0 4px;
-  color: #eee;
-}
-
-#disk {
+  color: #fff;
+  font-size: 13px;
   background-color: #333;
-  color: #eee;
 }
 
 #window,
@@ -106,21 +85,6 @@ window#waybar.chromium {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
-}
-
-#clock {
-  background-color: #333;
-  color: #eee;
-}
-
-#battery {
-  background-color: #333;
-  color: #eee;
-}
-
-#battery.charging {
-  background-color: #333;
-  color: #eee;
 }
 
 @keyframes blink {
@@ -144,41 +108,6 @@ label:focus {
   background-color: #000000;
 }
 
-#cpu {
-  background-color: #333;
-  color: #eee;
-}
-
-#memory {
-  background-color: #333;
-  color: #eee;
-}
-
-#backlight {
-  background-color: #333;
-  color: #eee;
-}
-
-#network {
-  background-color: #333;
-  color: #eee;
-}
-
-#network.disconnected {
-  background-color: #333;
-  color: #eee;
-}
-
-#pulseaudio {
-  background-color: #333;
-  color: #eee;
-}
-
-#pulseaudio.muted {
-  background-color: #333;
-  color: #eee;
-}
-
 #custom-media {
   background-color: #66cc99;
   color: #2a5c45;
@@ -193,23 +122,12 @@ label:focus {
   background-color: #ffa000;
 }
 
-#temperature {
-  background-color: #333;
-  color: #eee;
-}
-
 #temperature.critical {
   background-color: #eb4d4b;
 }
 
-#tray {
-  background-color: #333;
-}
-
 #tray menu {
-  background: @theme_base_color;
-  border-bottom: 1px solid @unfocused_borders;
-  color: @theme_text_color;
+  border-bottom: 1px solid;
 }
 
 #idle_inhibitor {
@@ -244,16 +162,6 @@ label:focus {
   padding: 0 5px;
   margin: 0 5px;
   min-width: 16px;
-}
-
-#custom-uptime {
-  background-color: #333;
-  color: #eee;
-}
-
-#custom-load {
-  background-color: #333;
-  color: #eee;
 }
 
 #idle_inhibitor {
